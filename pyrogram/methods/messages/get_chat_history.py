@@ -30,9 +30,10 @@ async def get_chunk(
     limit: int = 0,
     offset: int = 0,
     from_message_id: int = 0,
-    from_date: datetime = utils.zero_datetime(), reverse: bool = False
+    from_date: datetime = utils.zero_datetime(),
+    reverse: bool = False
 ):
-   from_message_id = from_message_id or (1 if reverse else 0)
+    from_message_id = from_message_id or (1 if reverse else 0)
 
     messages = await utils.parse_messages(
             client,
@@ -53,7 +54,7 @@ async def get_chunk(
         )
 
     if reverse:
-        messages.reverse()
+            messages.reverse()
 
     return messages
 
